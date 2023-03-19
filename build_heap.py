@@ -9,7 +9,7 @@ def heaps(data, size, i, swap):
         small = left
     if right < size and data[right]<data[small]:
         small = right
-    if j != small:
+    if i != small:
         swap.append((i, small))
         data[i], data[small] = data[small], data[i]
         heaps(data, size, small, swap)
