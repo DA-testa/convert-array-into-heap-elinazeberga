@@ -49,13 +49,13 @@ def main():
     # input from keyboard
    
     
-    swaps = build_heap(data)
+    
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
     # calls function to assess the data 
     # and give back all swaps
-    
+    swaps = build_heap(data)
 
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
