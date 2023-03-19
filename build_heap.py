@@ -1,27 +1,27 @@
 # python3
 
-def heaps(data, size, i, swap):
-    small = i
-    right = 2*i+2 ## right child n
-    left = 2*i+1 ## left child n
+def heaps(data, size, j, swap):
+    small = j
+    right = 2*j+2 ## right child n
+    left = 2*j+1 ## left child n
 
     if left < size and data[small]:
         small = left
     if right < size and data[right]<data[small]:
         small = right
-    if (i != small):
-        swap.append((i, small))
-        data[i], data[small] = data[small], data[i]
-        heaps(data, size, i, swap)
+    if j != small:
+        swap.append((j, small))
+        data[j], data[small] = data[small], data[j]
+        heaps(data, size, small, swap)
 
 
 def build_heap(data):
     swaps = []
     size = len(data)
-    j = size // 2-1
-    for j in range(size//2, -1, -1):
-        heaps(data, size, j, swaps)
-        j = j+1
+    i = size // 2-1
+    for i in range(size//2, -1, -1):
+        heaps(data, size, i, swaps)
+        i = i+1
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
 
